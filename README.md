@@ -19,7 +19,7 @@ To install and configure your **PiRogue**, just clone the project Git repository
 ```
 git clone http://git.0x39b.fr/lambda/PiRogue.git /usr/share/PiRogue
 ```
-Then, start the installation (_it will take a long time and ask you questions_):
+Then, start the installation (_it will take a long time and ask questions_):
 ```
 cd /usr/share/PiRogue
 sh install.sh
@@ -34,7 +34,7 @@ Remember that all the **PiRogue** files reside in `/usr/share/PiRogue`.
 
 ## Transparent proxying
 While using `mitmproxy` you can use between at least 2 different modes:
-* _normal_ you have to specify IP address and port of `mitmproxy` in the HTTP proxy section of the Wifi connection
+* _normal_ you have to specify IP address and port of `mitmproxy` in the HTTP proxy section of the Wifi connection on your target device
 * _transparent_ you do not need to specify a HTTP proxy on your target device
 
 An helper script `/usr/share/PiRogue/proxy/transparent.sh` is available. By executing this script, HTTP and HTTPS traffic from `wlan1` will be redirected to `mitmproxy`.
