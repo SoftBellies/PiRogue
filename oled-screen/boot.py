@@ -21,11 +21,10 @@ x = 0
 font = ImageFont.load_default()
 im = Image.open('/usr/share/PiRogue/oled-screen/pirogue.ppm').convert('1')
 top = 36
-while True:
-    draw = ImageDraw.Draw(im)
-    draw.text((0, top),    "  PCAP or it didn't", font=font, fill=255)
-    draw.text((0, top+14), "       happen!!    ", font=font, fill=255)
-    disp.image(im)
-    disp.display()
-    time.sleep(.1)
+
+draw = ImageDraw.Draw(im)
+draw.text((0, top),    "  PCAP or it didn't", font=font, fill=255)
+draw.text((0, top+14), "       happen!!    ", font=font, fill=255)
+disp.image(im)
+disp.display()
 

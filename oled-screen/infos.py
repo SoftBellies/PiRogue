@@ -19,7 +19,7 @@ def is_rogue_alive():
     return int(hostapd) > 0
 
 def get_rogue_ssid():
-    cmd = "grep -E \"^\W*?ssid\" /etc/hostapd/hostapd.conf | cut -d '=' -f2"
+    cmd = "grep -E \"^\W*?ssid\" /usr/share/PiRogue/hostapd/hostapd.conf | cut -d '=' -f2"
     ssid = subprocess.check_output(cmd, shell = True )
     if len(str(ssid).strip()) < 1 or not is_rogue_alive():
         return "not configured"
@@ -81,5 +81,5 @@ while True:
     draw.text((left, top+52),    is_capturing(), font=font, fill=0)
     disp.image(im)
     disp.display()
-    time.sleep(.1)
+    time.sleep(1.)
 
