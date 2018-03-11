@@ -1,11 +1,6 @@
 PIROGUE_ROOT_DIR=/usr/share/PiRogue
 mkdir -p $PIROGUE_ROOT_DIR
 
-# Resize the partition
-apt update
-apt install -y gparted
-#  launch gparted and resize the root partition
-
 # Install foundation
 apt dist-upgrade
 apt install -y kali-linux-full
