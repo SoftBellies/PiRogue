@@ -7,7 +7,6 @@ The **PiRogue** is based on:
 *  a `TL WN725N` version `2.1` or `2.2` 
 *  a 32GB SD-card
 
-
 ## Installation
 First of all, you have to resize the `root` partition. So install `gparted`:
 ```
@@ -26,4 +25,16 @@ cd /usr/share/PiRogue
 sh install.sh
 ```
 
-Remeber that all the **PiRogue** files reside in `/usr/share/PiRogue`.
+Remember that all the **PiRogue** files reside in `/usr/share/PiRogue`.
+
+## Screen customization
+**PiRogue** has a tiny OLED screen on top of it. This screen displays two different screens:
+*  the boot screen defined in `oled-screen/boot.py`
+*  the details screen defined in `oled-screen/infos.py`
+
+## Transparent proxying
+While using `mitmproxy` you can use between at least 2 different modes:
+* _normal_ you have to specify IP address and port of `mitmproxy` in the HTTP proxy section of the Wifi connection
+* _transparent_ you do not need to specify a HTTP proxy on your target device
+
+An helper script `/usr/share/PiRogue/proxy/transparent.sh` is available. By executing this script, HTTP and HTTPS traffic from `wlan1` will be redirected to `mitmproxy`.
