@@ -1,5 +1,19 @@
 # PiRogue
-**PiRogue** is a small device meant to ease network interception and analysis. **PiRogue** is based on a [Raspberry Pi 3](https://www.raspberrypi.org/) and [Kali GNU/Linux](https://www.kali.org/).
+**PiRogue** is a small device meant to ease network interception and analysis. **PiRogue** is based on a [Raspberry Pi 3](https://www.raspberrypi.org/) and [Kali GNU/Linux](https://www.kali.org/). This project is for educational purpose. 
+
+By default, **PiRogue** will mount a rogue Wifi access point with the SSID `PiRogue` without password available on `wlan1` which is the Wifi dongle. The Internet connection will be dynamically shared with the rogue Wifi network. **PiRogue** will automatically share the active connection (`wlan0` or `eth0`). 
+
+The OLED screen on top of the **PiRogue** will display: 
+*  disk and memory information
+*  ethernet IP address
+*  Wifi IP address
+*  rogue Wifi IP address
+*  rogue Wifi SSID
+*  indication about network capture
+
+Since **PiRogue** is based on [Kali GNU/Linux](https://www.kali.org/), it offers [plenty of tools](https://tools.kali.org/).
+
+This project was initiated with the participation of [@MaliciaRogue](https://twitter.com/MaliciaRogue).
 
 ## Hardware
 The **PiRogue** is based on:
