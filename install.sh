@@ -56,7 +56,7 @@ echo net.ipv6.conf.all.forwarding=1 >> /etc/sysctl.conf
 
 # Configure the firewall
 ln -s /usr/share/PiRogue/firewall/90pirogue.sh /etc/NetworkManager/dispatcher.d/90pirogue.sh
-chmod +x /etc/NetworkManager/dispatcher.d/90pirogue.sh
+chmod +x /usr/share/PiRogue/firewall/90pirogue.sh
 
 # Configure I2C
 cat >/boot/config.txt <<EOL
