@@ -20,13 +20,15 @@ apt install -y firmware-realtek
 #  after the next reboot, wlan1 will be available
 
 # Configure wlan1 as rogue AP
-cat >>/etc/network/interfaces <<EOL
+cat >/etc/network/interfaces <<EOL
+auto lo
+iface lo inet loopback
+
 auto wlan1
 allow-hotplug wlan1
 iface wlan1 inet static
     address 10.0.0.1
     netmask 255.0.0.0
-    up iptables-restore < /etc/iptables.ipv4.nat; ip6tables-restore < /etc/iptables.ipv6.nat
 EOL
 
 # Install hostapd
@@ -40,39 +42,21 @@ cd
 
 # Configure hostapd
 echo DAEMON_CONF=\"${PIROGUE_ROOT_DIR}/hostapd/hostapd.conf\" >> /etc/default/hostapd
-#rm -rf /etc/hostapd/hostapd.conf
-#ln -s ${PIROGUE_ROOT_DIR}/hostapd/hostapd.conf /etc/hostapd/hostapd.conf
 
 # Instal dnsmasq
 apt install -y dnsmasq
 systemctl enable dnsmasq
 
 # Configure dnsmasq
-rm -rf /etc/dnsmasq.conf
-ln -s ${PIROGUE_ROOT_DIR}/dnsmasq/dnsmasq.conf /etc/dnsmasq.conf
+ln -s ${PIROGUE_ROOT_DIR}/dnsmasq/dnsmasq.conf /etc/dnsmasq.d/pirogue.conf
 
 # Configure network routing
 echo net.ipv4.ip_forward=1 >> /etc/sysctl.conf
 echo net.ipv6.conf.all.forwarding=1 >> /etc/sysctl.conf
 
 # Configure the firewall
-iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE  
-iptables -t nat -A POSTROUTING -o wlan1 -j MASQUERADE  
-iptables -A FORWARD -i eth0 -o wlan1 -m state --state RELATED,ESTABLISHED -j ACCEPT  
-iptables -A FORWARD -i wlan0 -o wlan1 -m state --state RELATED,ESTABLISHED -j ACCEPT  
-iptables -A FORWARD -i wlan1 -o eth0 -j ACCEPT  
-iptables -A FORWARD -i wlan1 -o wlan0 -j ACCEPT  
-
-ip6tables -t nat -A POSTROUTING -o eth0 -j MASQUERADE  
-ip6tables -t nat -A POSTROUTING -o wlan1 -j MASQUERADE  
-ip6tables -A FORWARD -i eth0 -o wlan1 -m state --state RELATED,ESTABLISHED -j ACCEPT  
-ip6tables -A FORWARD -i wlan0 -o wlan1 -m state --state RELATED,ESTABLISHED -j ACCEPT  
-ip6tables -A FORWARD -i wlan1 -o eth0 -j ACCEPT  
-ip6tables -A FORWARD -i wlan1 -o wlan0 -j ACCEPT  
-
-# Save firewall configuration
-iptables-save > /etc/iptables.ipv4.nat
-ip6tables-save > /etc/iptables.ipv6.nat
+ln -s /usr/share/PiRogue/firewall/90pirogue.sh /etc/NetworkManager/dispatcher.d/90pirogue.sh
+chmod +x /etc/NetworkManager/dispatcher.d/90pirogue.sh
 
 # Configure I2C
 cat >/boot/config.txt <<EOL
@@ -93,10 +77,7 @@ cd
 rm -rf /tmp/ssd1306
 
 # Add a reboot task in cron table displaying the boot screen
-crontab -l > /tmp/crontab
-echo @reboot /usr/bin/python ${PIROGUE_ROOT_DIR}/oled-screen/boot.py >> /tmp/crontab
-crontab /tmp/crontab
-rm /tmp/crontab
+echo @reboot /usr/bin/python ${PIROGUE_ROOT_DIR}/oled-screen/boot.py /etc/cron.d/pirogue
 
 # Add a service displaying PiRogue details
 ln -s ${PIROGUE_ROOT_DIR}/oled-screen/display_details.service /etc/systemd/system/display_details.service

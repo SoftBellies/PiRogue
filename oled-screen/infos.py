@@ -71,15 +71,18 @@ im = Image.open('/usr/share/PiRogue/oled-screen/infos.ppm').convert('1')
 top = 0
 left = 12
 while True:
-    draw = ImageDraw.Draw(im)
-    draw.rectangle(((left, 0), (width, height)), fill=255)
-    draw.text((left, top+0),     get_stats(), font=font, fill=0)
-    draw.text((left, top+10),    get_iface_ip_address('eth0'), font=font, fill=0)
-    draw.text((left, top+20),    get_iface_ip_address('wlan0'), font=font, fill=0)
-    draw.text((left, top+30),    get_iface_ip_address('wlan1'), font=font, fill=0)
-    draw.text((left, top+40),    get_rogue_ssid(), font=font, fill=0)
-    draw.text((left, top+52),    is_capturing(), font=font, fill=0)
-    disp.image(im)
-    disp.display()
-    time.sleep(1.)
+    try:
+        draw = ImageDraw.Draw(im)
+        draw.rectangle(((left, 0), (width, height)), fill=255)
+        draw.text((left, top+0),     get_stats(), font=font, fill=0)
+        draw.text((left, top+10),    get_iface_ip_address('eth0'), font=font, fill=0)
+        draw.text((left, top+20),    get_iface_ip_address('wlan0'), font=font, fill=0)
+        draw.text((left, top+30),    get_iface_ip_address('wlan1'), font=font, fill=0)
+        draw.text((left, top+40),    get_rogue_ssid(), font=font, fill=0)
+        draw.text((left, top+52),    is_capturing(), font=font, fill=0)
+        disp.image(im)
+        disp.display()
+    finally:
+        del draw
+    time.sleep(3.)
 
