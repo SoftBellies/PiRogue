@@ -6,6 +6,8 @@ from PIL import ImageDraw
 from PIL import ImageFont
 import subprocess
 
+time.sleep(10)
+
 def get_iface_ip_address(iface):
     cmd = "ifconfig %s | grep \"inet \" | awk '{print $2}'" % iface
     ip = subprocess.check_output(cmd, shell = True )
