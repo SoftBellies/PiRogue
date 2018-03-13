@@ -1,3 +1,5 @@
+![logo](https://git.0x39b.fr/lambda/PiRogue/raw/master/pictures/icon.png)
+
 # PiRogue
 **PiRogue** is a small device meant to ease network interception and analysis. **PiRogue** is based on a [Raspberry Pi 3](https://www.raspberrypi.org/) and [Kali GNU/Linux](https://www.kali.org/). This project is for educational purpose. 
 
