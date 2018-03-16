@@ -23,6 +23,8 @@ The **PiRogue** is based on:
 *  a `TL WN725N` version `2.1` or `2.2` 
 *  a 32GB SD-card
 
+A custom 3D printed case is [available on Thingiverse](https://www.thingiverse.com/thing:2822262).
+
 ## Installation
 First of all, you have to resize the `root` partition. So install `gparted`:
 ```
@@ -42,6 +44,9 @@ sh install.sh
 ```
 
 Remember that all the **PiRogue** files reside in `/usr/share/PiRogue`.
+
+## Demo
+*  [Ep1 - Capture HTTP/S traffic](https://www.youtube.com/watch?v=o0OSaSh0HJw)
 
 ## Screen customization
 **PiRogue** has a tiny OLED screen on top of it. This screen displays two different screens:
