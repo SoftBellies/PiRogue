@@ -1,4 +1,6 @@
-![logo](https://git.0x39b.fr/lambda/PiRogue/raw/master/pictures/icon.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/U039b/PiRogue/master/pictures/icon.png" alt="PiRogue icon"/>
+</p>
 
 # PiRogue
 **PiRogue** is a small device meant to ease network interception and analysis. **PiRogue** is based on a [Raspberry Pi 3](https://www.raspberrypi.org/) and [Kali GNU/Linux](https://www.kali.org/). This project is for educational purpose. 
@@ -28,7 +30,10 @@ A custom 3D printed case is [available on Thingiverse](https://www.thingiverse.c
 
 ### Connect the OLED screen
 To display things on the tiny screen, you have to connect it to the Rapberry Pi GPIO. Follow this wiring schema:
-![screen_wiring](https://raw.githubusercontent.com/U039b/PiRogue/master/pictures/screen_wiring.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/U039b/PiRogue/master/pictures/screen_wiring.png" alt="OLED screen wiring"/>
+</p>
+
 For more details about the screen and the GPIO, have a look to [my PiRouter tutorial](https://esther.codes/post/pi_router_story/#ep4).
 
 ## Demo
