@@ -1,5 +1,5 @@
 # Google Location Service live map
-Some applications like _Waze_ use GLS to accurately locate you. This plugin is meant to dynamically display GPS locations and Wifi routers locations on a map. 
+Some applications like _Waze_ use GLS to accurately locate you. This plugin is meant to dynamically display GPS locations and Wifi routers locations on a map. Checkout the [Google Location Service reverse engineering](https://esther.codes/reverse-engineering-google-location-gms-specification/).
 
 ![logo](https://git.0x39b.fr/lambda/PiRogue/raw/master/pictures/gls_live_map.png)
 
@@ -18,3 +18,4 @@ To see the live map, use the following command to open it in Firefox:
 ```
 firefox /usr/share/PiRogue/mitmproxy/gls_live_map/gls.html
 ```
+
