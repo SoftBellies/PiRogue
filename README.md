@@ -26,6 +26,11 @@ The **PiRogue** is based on:
 
 A custom 3D printed case is [available on Thingiverse](https://www.thingiverse.com/thing:2822262).
 
+### Connect the OLED screen
+To display things on the tiny screen, you have to connect it to the Rapberry Pi GPIO. Follow this wiring schema:
+![screen_wiring](https://raw.githubusercontent.com/U039b/PiRogue/master/pictures/screen_wiring.png)
+For more details about the screen and the GPIO, have a look to [my PiRouter tutorial](https://esther.codes/post/pi_router_story/#ep4).
+
 ## Demo
 *  [Ep1 - Capture HTTP/S traffic](https://www.youtube.com/watch?v=o0OSaSh0HJw)
 
