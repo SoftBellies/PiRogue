@@ -16,6 +16,6 @@ mitmproxy -s /usr/share/PiRogue/mitmproxy/gls_live_map/gls.py
 
 To see the live map, use the following command to open it in Firefox:
 ```
-firefox /usr/share/PiRogue/mitmproxy/gls_live_map/gls.html
+firefox /usr/share/PiRogue/mitmproxy/gls_live_map/map.html
 ```
 
