@@ -71,4 +71,4 @@ While using `mitmproxy` you can use between at least 2 different modes:
 An helper script `/usr/share/PiRogue/proxy/transparent.sh` is available. By executing this script, HTTP and HTTPS traffic from `wlan1` will be redirected to `mitmproxy`.
 
 ### Google Location service live map
-Please refer to the [GLS live map plugin]()
+Please refer to the [GLS live map plugin](https://github.com/U039b/PiRogue/tree/master/mitmproxy)

@@ -1,7 +1,7 @@
 # Google Location Service live map
 Some applications like _Waze_ use GLS to accurately locate you. This plugin is meant to dynamically display GPS locations and Wifi routers locations on a map. Checkout the [Google Location Service reverse engineering](https://esther.codes/reverse-engineering-google-location-gms-specification/).
 
-![logo](https://git.0x39b.fr/lambda/PiRogue/raw/master/pictures/gls_live_map.png)
+![screenshot](https://raw.githubusercontent.com/U039b/PiRogue/master/pictures/gls_live_map.png)
 
 ## Usage
 You had already dumped MITMproxy flow file containing traffic of a travel session using _Waze_ or other application which use location, you can run this plugin with this command:
