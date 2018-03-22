@@ -24,6 +24,11 @@ The **PiRogue** is based on:
 *  a 32GB SD-card
 *  a `SSD1306` I2C 0.96" OLED screen
 
+A custom 3D printed case is [available on Thingiverse](https://www.thingiverse.com/thing:2822262).
+
+## Demo
+*  [Ep1 - Capture HTTP/S traffic](https://www.youtube.com/watch?v=o0OSaSh0HJw)
+
 ## Installation
 ### 1 - Install Kali GNU/Linux
 Please refer to the [Kali documentation](https://docs.kali.org/kali-on-arm/install-kali-linux-arm-raspberry-pi) for this step.
