@@ -51,7 +51,7 @@ apt update
 apt install -y gparted
 gparted
 ```
-and use it to resize the partition.
+and use it to resize the partition in order to fill the entier SD-card unallocated space.
 
 ### 3 - Install **PiRogue** customization
 To install and configure your **PiRogue**, just clone the project Git repository:
