@@ -56,7 +56,7 @@ and use it to resize the partition.
 ### 3 - Install **PiRogue** customization
 To install and configure your **PiRogue**, just clone the project Git repository:
 ```
-git clone http://git.0x39b.fr/lambda/PiRogue.git /usr/share/PiRogue
+git clone git@github.com:U039b/PiRogue.git /usr/share/PiRogue
 ```
 
 Then, start the installation (_it will take a long time and ask questions_):
